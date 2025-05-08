@@ -1,4 +1,4 @@
-const  tokenName = 'biscuit-token'
+const  tokenName = 'child-token'
 
 export const setToken = (token) => {
     localStorage.setItem(tokenName, token)

@@ -7,7 +7,7 @@ import './ChildCard.css'
 
 
 
-const ChildCard = ({ child }) => {
+const ChildCard = ({ child,  newLikes}) => {
 
   const location = useLocation()
   const { user } = useContext(UserContext)
@@ -56,6 +56,17 @@ console.log('😊Expected path:', `/childs/${child.id}`);
 <img src={child.image} alt={`picture of ${child.name}`} className='image' style={{padding: '20px', display:'flex',justifyContent:'center', flexDirection:'column',alignItems: 'center' }}></img>
 <div className= "details">
   <h2>{child.name}</h2>
+  <h2>Likes:</h2>
+<ul>
+  {child.likes?.map((foodItem) => (
+    <li key={foodItem._id}>{foodItem.name}</li>
+  ))}
+</ul>
+<ul>
+  {newLikes?.map((newLike) => (
+    <li key={newLike}>{newLike}</li>
+  ))}
+</ul>
   <p>description : {child.description}</p>
   <p>category : {child.type}</p>
 </div>
@@ -75,9 +86,12 @@ console.log('😊Expected path:', `/childs/${child.id}`);
 <ul>
   {child.likes?.map((foodItem) => (
     <li key={foodItem._id}>{foodItem.name}</li>
+  
   ))}
+
 </ul>
 </div>
+<p>extra</p>
 </div>
 
 )}

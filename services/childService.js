@@ -83,9 +83,11 @@ return res.data
 
 export const addChildLike = async (childId, foodItemId) => {
     try {
-      const res = await axios.put(BASE_URL + `/${childId}`, null, {
+      const res = await axios.put(`${BASE_URL}/${childId}/likes`,
+        { foodItemId }, 
+        {
         headers: {
-            likes: `${foodItemId}`
+            Authorization: `Bearer ${getToken()}`,
         }
     })
       return res.data

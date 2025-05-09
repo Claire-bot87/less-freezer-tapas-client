@@ -7,9 +7,9 @@ import { Link } from 'react-router'
 //import './AllFoodItems.css'
 import '../../src/App.css'
 
-export default function AllFoodItems(){
+export default function AllFoodItems({ addToNewLikesList }){
  
-    const [foodItems, setFoodItems]= useState ({})
+    const [foodItems, setFoodItems]= useState ([])
 
     const { user } = useContext(UserContext)
     
@@ -31,7 +31,7 @@ export default function AllFoodItems(){
 
 
 {foodItems.length > 0 
-? foodItems.map(foodItem => <FoodItemCard key={foodItem._id} foodItem={foodItem} />)
+? foodItems.map(foodItem => <FoodItemCard key={foodItem._id} foodItem={foodItem} addToNewLikesList={addToNewLikesList} />)
 : <p>There are no foodItems yet</p>
 
 }

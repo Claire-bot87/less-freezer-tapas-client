@@ -7,10 +7,13 @@ import './FoodItemCard.css'
 import { useState, useEffect } from 'react'
 
 
-const FoodItemCard = ({ foodItem }) => {
+const FoodItemCard = ({ foodItem, addToNewLikesList }) => {
 
   const [like, setLike]= useState ({})
   const [error, setError] = useState('')
+ 
+
+  const { childId } = useParams()
 
   const location = useLocation()
   const { user } = useContext(UserContext)
@@ -18,6 +21,10 @@ const FoodItemCard = ({ foodItem }) => {
 
 const isHomepage = location.pathname === '/foodItems'
 const isSingleFoodItemPage = location.pathname === `/foodItems/${foodItem.id}`
+// const isSingleChildPage = location.pathname === `/childs/${child.id}`
+
+
+
 
 const handleDelete = async () => {
   const confirmDelete = window.confirm('Are you sure you want to delete this post?')
@@ -34,36 +41,30 @@ const handleDelete = async () => {
 
 const handleAddChildLike = async (foodItemId) => {
   try {
-      const response = await addChildLike(foodItemId)
+    console.log(`🍔FOOD ITEM ID IN HANDLE ADD ${foodItemId}`)
+    console.log(`🍟FOOD ITEM NAME IN HANDLE ADD ${foodItem.name}`)
+      const response = await addChildLike(childId, foodItemId)
       setLike(response)
-     
-
-      if (!response || !response._id) {
-          throw new Error("Invalid response from the server");
-      }
-      if (!foodItemId) {
-          throw new Error("Incorrect movie id")
-      }
+      addToNewLikesList(foodItem.name)
 
   } catch (error) {
-      if (error.response && error.response.data && error.response.data.errors) {
-          setError(error.response.data.errors)
-      } else {
+     console.log(error)
           setError({ general: "Something went wrong. Please try again." })
       }
   }
-}
+
 
 console.log('foodItem OBJECT' + foodItem)
 console.log(JSON.stringify(foodItem, null, 2))
-console.log('foodItem ID' + foodItem.id)
+console.log('foodItem ID' + foodItem._id)
 console.log('foodItem NAME' + foodItem.name)
 console.log(`USER ID ${user?.id}`)
 console.log(`foodItem USER ID ${foodItem.user}`)
 console.log(`foodItem TYPE ${foodItem.type}`)
-
+console.log("FOOD ITEM ID FOR LIKE BUTTON", foodItem._id)
     return (
-   
+
+
       <article className = 'card'>
       {isSingleFoodItemPage && (
     <div className ='foodItem-card-large'>
@@ -93,6 +94,12 @@ console.log(`foodItem TYPE ${foodItem.type}`)
 
 )}
 
+<div className= "details">
+
+  <h2>{foodItem.name}</h2>
+
+</div>
+
 
 <div className='pencil-garbage-wrapper'>
 <div className="garbage" onClick={handleDelete}></div>
@@ -104,7 +111,7 @@ console.log(`foodItem TYPE ${foodItem.type}`)
 </Link>      
 </div>
 
-
+<button className="button" id="add-like" onClick={() => {handleAddChildLike(foodItem._id)}}></button>
 
 {isHomepage && (
 //   <Link to={`/foodItems/${foodItem.id}`}>
@@ -112,10 +119,9 @@ console.log(`foodItem TYPE ${foodItem.type}`)
 
 // </div>
 // </Link> 
- <button className="button" id="add-like" onClick={() => {handleAddChildLike()}}>{<img src="https://res.cloudinary.com/dvp3fdavw/image/upload/v1739356535/heart_1_yybbex.png" />}</button>
-)}
+ <button className="button" id="add-like" onClick={() => {handleAddChildLike(foodItem._id)}}></button>
+ )}
       </article>
-
     )
   }
   

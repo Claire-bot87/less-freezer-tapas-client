@@ -6,7 +6,10 @@ import { UserContext } from '../../contexts/UserContext'
 import { useState, useEffect } from 'react'
 import { childShow } from '../../services/childService'
 import './SingleChild.css'
+import '../FoodItemCard/FoodItemCard.css'
+import '../AllFoodItems/AllFoodItems.css'
 import '../../src/App.css'
+import { foodItemIndex } from '../../services/foodItemService'
 
 export default function SingleChild(){
 
@@ -16,12 +19,22 @@ export default function SingleChild(){
   const [child, setChild] = useState(null)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  
+  const [newLikes, setNewLikes] = useState ([])
   
    // Location variables
    const { childId } = useParams()
    const navigate = useNavigate()
+
+   const [allFoodItems, setAllFoodItems] = useState([])
+
+   const addToNewLikesList =(itemToAdd)=>{
+    setNewLikes([...newLikes, itemToAdd])
   
+  }
+  
+  useEffect(() => {
+    console.log(`❤️NEW LIKES UPDATED: ${newLikes}`)
+  }, [newLikes])
   
   useEffect(() => {
       console.log(`BISCUIT ID = ${childId}`)
@@ -44,14 +57,14 @@ export default function SingleChild(){
       getChild()
     }, [childId])
   
+   
       return (
           <>
        <div className='space'></div>
    
-         { child && <ChildCard child={child}/> }
-        
+         { child && <ChildCard child={child} newLikes={newLikes}/> }
+
+        <AllFoodItems addToNewLikesList={addToNewLikesList} />
           </>
   )
   }
-  
-  

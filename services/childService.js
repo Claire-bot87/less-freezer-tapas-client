@@ -79,11 +79,28 @@ return res.data
 }
 
 
-//NEED TO COMPLETE THIS:
+
 
 export const addChildLike = async (childId, foodItemId) => {
     try {
       const res = await axios.put(`${BASE_URL}/${childId}/likes`,
+        { foodItemId }, 
+        {
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+        }
+    })
+      return res.data
+    } catch (error) {
+      console.log(error)
+      throw error
+    }
+  }
+
+
+  export const addChildDislike = async (childId, foodItemId) => {
+    try {
+      const res = await axios.put(`${BASE_URL}/${childId}/dislikes`,
         { foodItemId }, 
         {
         headers: {

@@ -11,7 +11,7 @@ import '../AllFoodItems/AllFoodItems.css'
 import '../../src/App.css'
 import { foodItemIndex } from '../../services/foodItemService'
 
-export default function SingleChild(){
+export default function SingleChild() {
 
 
 
@@ -19,52 +19,65 @@ export default function SingleChild(){
   const [child, setChild] = useState(null)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  const [newLikes, setNewLikes] = useState ([])
-  
-   // Location variables
-   const { childId } = useParams()
-   const navigate = useNavigate()
+  const [newLikes, setNewLikes] = useState([])
+  const [newDislikes, setNewDislikes] = useState([])
 
-   const [allFoodItems, setAllFoodItems] = useState([])
+  // Location variables
+  const { childId } = useParams()
+  const navigate = useNavigate()
 
-   const addToNewLikesList =(itemToAdd)=>{
+  const [allFoodItems, setAllFoodItems] = useState([])
+
+  const addToNewLikesList = (itemToAdd) => {
     setNewLikes([...newLikes, itemToAdd])
-  
+
   }
-  
+
+  const addToNewDislikesList = (itemToAdd) => {
+    setNewDislikes([...newDislikes, itemToAdd])
+
+  }
+
   useEffect(() => {
     console.log(`❤️NEW LIKES UPDATED: ${newLikes}`)
   }, [newLikes])
-  
-  useEffect(() => {
-      console.log(`BISCUIT ID = ${childId}`)
-      async function getChild(){
-        try {
-          const data = await childShow(childId)
-          console.log(`BISCUIT ID = ${childId}`)
-          setChild(data)
-        } catch (error) {
-          if (error.status === 400) {
-            setError('Child not found.')
-          } else {
-            setError(error.response.data.message)
-          }
-          
-        } finally {
-          setIsLoading(false)
-        }
-      }
-      getChild()
-    }, [childId])
-  
-   
-      return (
-          <>
-       <div className='space'></div>
-   
-         { child && <ChildCard child={child} newLikes={newLikes}/> }
 
-        <AllFoodItems addToNewLikesList={addToNewLikesList} />
-          </>
+  useEffect(() => {
+    console.log(`❌❌NEW DISLIKES UPDATED: ${newDislikes}`)
+  }, [newDislikes])
+
+  useEffect(() => {
+    console.log(`BISCUIT ID = ${childId}`)
+    async function getChild() {
+      try {
+        const data = await childShow(childId)
+        console.log(`CHILD ID = ${childId}`)
+        console.log("👶 CHILD DATA:", data)
+        setChild(data)
+      } catch (error) {
+        if (error.status === 400) {
+          setError('Child not found.')
+        } else {
+          setError(error.response.data.message)
+        }
+
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    getChild()
+  }, [childId])
+
+
+  return (
+    <>
+      <div className='space'></div>
+      <div className="childcard-div">
+        {child && <ChildCard child={child} newLikes={newLikes} newDislikes={newDislikes} />}
+      </div>
+      <div className="fooditems-div">
+        {child && <AllFoodItems child={child} addToNewLikesList={addToNewLikesList} addToNewDislikesList={addToNewDislikesList} />}
+      </div>
+    </>
   )
-  }
+}

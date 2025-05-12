@@ -1,6 +1,6 @@
-.card {
+.food-card {
     padding: 1rem;
-    background-color:#ffffff!important;
+    background-color:blue;
     border-width: 2px !important;
     border-style: solid !important;
     border-color: var(--background-secondary) !important;
@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: center !important;
     align-items: center;
+    width: 25vw;
+    height: 12vh;
     /* min-width: 300px; */
   }
   
@@ -27,17 +29,15 @@
   }
   
   
-  .card h2 {
+  .food-card h2 {
     font-size: 1em;
     margin-bottom: .5rem;
     letter-spacing: 0.2px;
     font-weight: 600;
-  }
-  
-  .card h2 {
-    color: var(--text-secondary);
+    color: white;
     font-weight: 400;
-    color:#b71782 !important;
+    
+    background-color: blue;
   }
   
   .card p:nth-of-type(1){
@@ -57,18 +57,18 @@
   
   .foodItem-card-large {
     width: 80%; 
-    height: auto;
-    margin: 20px;
+    /* height: auto; */
+    /* margin: 20px; */
     font-size: x-large;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   
-  .details{
-    background-color: #ffffff;
+  .food-details{
+    /* background-color: #ffffff; */
     height:30%;
   }
   
@@ -93,57 +93,10 @@
   }
   
   
-  .pencil {
-  
-    background-image: url(./plus.png);
-    background-color: #b71782;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .rating {
-  
-    background-image: url(./plus.png);
-    background-color: #b71782;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .garbage {
-  
-    background-image: url(./plus.png);
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .pencil-garbage-wrapper
-  {
-    display:flex;
-    justify-content: center;
-    align-content:space-between;
-    background-color: #ffffff;
-  }
+
   
   .box{
-    background-color:#ffffff;
+    /* background-color:#ffffff; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,7 +106,7 @@
     width:100%;
   }
   .single-foodItem-box {
-    background-color:#ffffff;
+    background-color: blue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +145,7 @@
     }
     
     .box{
-      background-color:#ffffff;
+      /* background-color:#ffffff; */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -223,11 +176,24 @@
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  height: 1rem;
-  width: 1rem;
+  height: 2rem;
+  width: 2rem;
   background-image: url(./heart.png);
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
 }
 
+#add-dislike{
+  background-color: blue;
+  font-size: 32px;;
+  cursor: pointer;
+}
+
+.like-dislike-buttons-div{
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}

@@ -4,6 +4,7 @@ import { signin } from '../../services/userService'
 import { setToken } from '../../utils/auth'
 import { getUserFromToken } from '../../utils/auth'
 import { UserContext } from '../../contexts/UserContext'
+import './Signin.css';
 
 
 export default function Signin(){
@@ -44,7 +45,8 @@ export default function Signin(){
     }
   
     return (
-      <section className='container'>
+      <section className='container-box'>
+        <div className="container">
              
         
         <h1>Sign in</h1>
@@ -93,6 +95,7 @@ export default function Signin(){
   
   
         <button onClick={() => navigate('/signup')} className='no-account-button'>Don't have an account yet? Sign up here!</button>
+        </div>
       </section>
     )
   }

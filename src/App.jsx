@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router'
+import { Routes, Route, useLocation } from 'react-router'
 import Signup from '../components/Signup/Signup.jsx'
 import Signin from '../components/Signin/Signin.jsx'
 import SingleChild from '../components/SingleChild/SingleChild.jsx'
@@ -8,33 +8,34 @@ import AddFoodItem from '../components/AddFoodItem/AddFoodItem'
 import UpdateFoodItem from '../components/UpdateFoodItem/UpdateFoodItem'
 import AddChild from '../components/AddChild/AddChild'
 import UpdateChild from '../components/UpdateChild/UpdateChild.jsx'
-import Hero from '../components/Hero/Hero.jsx'
+import Home from '../components/Home/Home.jsx'
+import Nav from '../components/Nav/Nav.jsx'
 import AllChildsSideBar from '../components/AllChildsSideBar/AllChildsSideBar.jsx'
+import SingleUser from '../components/SingleUser/SingleUser.jsx'
+import './App.css';
 
 function App() {
-  return (
-    <>
-   
-     <nav>
-      <Link to="/Signin">Signin</Link>
-      <Link to="/Signup">Signup</Link>
-     </nav>
-     <Routes>
-< Route path="/" element={<Hero />} />
-< Route path="/childs" element={<AllChildsSideBar />} />
-< Route path="/signup" element={<Signup/>} />
-< Route path="/signin" element={<Signin/>} />
-< Route path="/childs/:childId" element={<SingleChild/>} />
-< Route path="/foodItems" element={<AllFoodItems/>} />
-< Route path="/foodItems/:foodItemId" element={<FoodItemCard/>} />
-< Route path="/foodItems" element={<AddFoodItem/>} />
-< Route path="/foodItems/:foodItemId" element={<UpdateFoodItem/>} />
-< Route path="/childs" element={<AddChild/>} />
-< Route path="/childs/:childId" element={<UpdateChild/>} />
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
-     </Routes>
-    </>
-  )
+  return (
+    <div className={isHome ? 'hero-background' : 'all-pages-background'}>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/childs" element={<AllChildsSideBar />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/childs/:childId" element={<SingleChild />} />
+        <Route path="/foodItems" element={<AllFoodItems />} />
+        <Route path="/foodItems/add" element={<AddFoodItem />} />
+        <Route path="/foodItems/:foodItemId" element={<UpdateFoodItem />} />
+        <Route path="/childs/add" element={<AddChild />} />
+        <Route path="/childs/:childId/edit" element={<UpdateChild />} />
+        <Route path="/users/:userId" element={<SingleUser />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

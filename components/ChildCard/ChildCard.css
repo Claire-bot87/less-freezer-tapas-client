@@ -252,21 +252,23 @@ background-color: red;
   .image-div-girl{
     height:40vh;
     width: 30vw;
-background-image: url(./girl.png);
+background-image: url('/assets/girl.png');
 background-size: contain; 
 background-position: center;
 background-repeat: no-repeat;
 justify-content: center;
+background-color: red;
   }
 
   .image-div-boy{
     height:40vh;
     width: 30vw;
-    background-image: url(./boy.png);
+    background-image: url('/assets//boy.png');
     background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
+    background-color: red;
       }
 
 

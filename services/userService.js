@@ -48,3 +48,15 @@ export const signup = async (formData) => {
         throw new error
     }
 }
+
+export const userShow = async (userId) => {
+  try{
+      const res = await axios.get(BASE_URL + `/${userId}`)
+      console.log(`child ID = ${userId}`)
+      console.log('Response from userShow:', res.data) 
+      return res.data
+  } catch (error) {
+      console.log('Error in userShow:', error)
+      throw error
+  }
+  }

@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { useNavigate} from 'react-router'
 import {signup} from '../../services/userService'
 import {UserContext} from '../../contexts/UserContext'
-
+import './Signup.css';
 
 export default function Signup(){
 
@@ -40,7 +40,7 @@ export default function Signup(){
 
 return(
   <section className='container-box'>
-    <section className ='container'>
+    <div className ='container'>
 
 <h1>Signup</h1>
 <p className="signup">You are creating an account</p>
@@ -116,7 +116,7 @@ return(
 
 
 
-    </section>
+    </div>
     </section>
 )
 

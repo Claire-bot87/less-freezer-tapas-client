@@ -72,11 +72,13 @@ export default function SingleChild() {
   return (
     <>
       <div className='space'></div>
+      <div className="background">
       <div className="childcard-div">
         {child && <ChildCard child={child} newLikes={newLikes} newDislikes={newDislikes} />}
       </div>
       <div className="fooditems-div">
         {child && <AllFoodItems child={child} addToNewLikesList={addToNewLikesList} addToNewDislikesList={addToNewDislikesList} />}
+      </div>
       </div>
     </>
   )

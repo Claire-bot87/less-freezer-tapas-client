@@ -1,0 +1,21 @@
+.nav-div{
+    text-decoration: none !important;
+    padding: none !important;
+    margin: none! important;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit; /* optional: match surrounding text */
+    padding: none !important;
+    margin: none! important;
+    display:flex;
+    flex-direction:row;
+    height:0vh;
+
+  }

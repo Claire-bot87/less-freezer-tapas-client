@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { signin } from '../../services/userService'
 import { setToken } from '../../utils/auth'
@@ -8,6 +8,9 @@ import './Signin.css';
 
 
 export default function Signin(){
+
+
+
 
     const { setUser } = useContext(UserContext)
 
@@ -23,6 +26,12 @@ export default function Signin(){
       const navigate = useNavigate();
 
       const { user } = useContext(UserContext)
+
+      useEffect(() => {
+        if (user) {
+          navigate(`/users/${user._id}`);
+        }
+      }, [user, navigate]);
   
     // Events
     const handleSubmit = async (e) => {
@@ -34,12 +43,17 @@ export default function Signin(){
     
         setUser(getUserFromToken())
         console.log(`🌸 USER${user._id}`)
+
+     
       navigate(`/users/${user._id}`)
       } catch (error) {
       //   setErrors(error.response.data.errors)
         setErrors(error.message)
       }
     }
+
+   
+  
   
     const handleChange = (e) => {
       //console.dir(e.target)

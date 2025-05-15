@@ -32,7 +32,7 @@ export default function AddChild() {
         e.preventDefault()
         try {
             const data = await childCreate(formData)
-            navigate(`/childs/${data.id}`)
+            navigate(`/childs/${data._id}`)
 
         } catch (error) {
             setErrors(error.response?.data?.errors || {})
@@ -75,7 +75,7 @@ export default function AddChild() {
                         required
                     />
                 </div>
-                
+
                 <div className='button-group'>
           <Link to='/'>Cancel</Link>
           <button type='submit' disabled={formData.name === '' || isUploading}>Create</button>

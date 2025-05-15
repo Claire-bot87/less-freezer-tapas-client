@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../contexts/UserContext'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { childIndex } from '../../services/childService'
 import ChildCard from '../ChildCard/ChildCard'
 import { Link } from 'react-router'
@@ -15,9 +15,13 @@ export default function AllChildsSideBar(){
 
     const location = useLocation()
 
+    const navigate = useNavigate()
+
     const isChildsPage = location.pathname === '/childs';
-    const isSingleUserPage = location.pathname === `/users/${user._id}`;
-    
+    // const isSingleUserPage = location.pathname === `/users/${user._id}`;
+    const userChildren = childs.filter(child => String(child.parent._id) === String(user._id));
+
+
     useEffect(() => {
     childIndex()
      .then(data => {
@@ -36,7 +40,9 @@ export default function AllChildsSideBar(){
       console.log('User ID:', user._id);
       console.log('Child Parents:', childs.map(c => c.parent));
       console.log('Childs:', childs);
-
+      console.log('💥User ID:', user._id);
+      console.log('💥All children:', childs);
+      
 
     return (
     <>
@@ -55,22 +61,33 @@ export default function AllChildsSideBar(){
 </div> 
 
 }
-{ isSingleUserPage && 
-<>
-<h1>FILTER</h1>
-<div className = 'filter-container'style={{ border: '2px solid green' }}>
 
+{/* {isSingleUserPage && ( */}
+      <>
+        <h1>FILTER</h1>
+        <div className='filter-container' style={{ border: '2px solid green' }}>
+          {userChildren.length > 0 ? (
 
-{childs.length > 0 
-? childs
-.filter(child => String(child.parent._id) === String(user._id))
-.map(child => <h1 key={child._id}>{child.name}</h1>)
-: <p>There are no childs yet</p>
-}
+            userChildren.map(child => (
+                // <Link to='/childs/`${child._id}`'>
+                <Link to='/childs/{child._id}'>
+              <h1 key={child._id}>{child.name}</h1>
+              </Link>
+            ))
+            // <h1>hey!</h1>
+          ) : (
+            <div className='no-childs-div'>
+              <p>There are no children yet</p>
+              <button onClick={() => navigate('/childs/add')} className='add-child-button'>
+                Add Child
+              </button>
+            </div>
+            // <h1>Howdy!</h1>
+          )}
+        </div>
+      </>
+ {/* )} */}
 
-</div>
-</>
-}
 
 { user &&
 <Link to='/childs/new'>

@@ -52,3 +52,12 @@
     display:block;
     color:red;
 }
+
+.no-childs-div{
+    font-size: large;
+    color:red;
+    width:200px;
+    height:200px;
+    background-color:blue;
+
+}

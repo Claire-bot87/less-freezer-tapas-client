@@ -13,8 +13,6 @@ import { foodItemIndex } from '../../services/foodItemService'
 
 export default function SingleChild() {
 
-
-
   // State
   const [child, setChild] = useState(null)
   const [error, setError] = useState('')

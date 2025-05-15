@@ -9,22 +9,31 @@ import '../../src/App.css'
 
 export default function AllChildsSideBar(){
  
-    const [childs, setChilds]= useState ({})
+    const [childs, setChilds]= useState ([])
 
     const { user } = useContext(UserContext)
     
     useEffect(() => {
     childIndex()
-     .then(data => setChilds(data))
-    
+     .then(data => {
+     console.log("👶 CHILD INDEX RESPONSE:", data)
+     setChilds(data)
+     console.log("👶 CHILDS after set:", data)})
     .catch(err => console.log(err))
     }, [])
 
+
+    useEffect(() => {
+        console.log("👶 CHILDS:", childs);
+      }, [childs]);
+
+
     return (
     <>
+    <div className="sidebar">
     <div className = 'topdiv' ></div>
 
-<div className = 'childContainer'>
+<div className = 'childContainer'style={{ border: '2px solid green' }}>
 
 
 {childs.length > 0 
@@ -40,6 +49,8 @@ export default function AllChildsSideBar(){
 <Link to='/childs/new'>
 <div className="new-child"></div></Link>
 }
+
+</div>
 </>
     )
 }

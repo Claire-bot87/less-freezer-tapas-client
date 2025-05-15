@@ -21,11 +21,16 @@
     justify-content: center;
 }
 
-@media (max-width:480px) {
 
 .childContainer{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #ddd;
+    padding: 1rem;
+    min-width: 250px;
+    border: 2px solid green; /* Optional for debug */
 
-}
 }

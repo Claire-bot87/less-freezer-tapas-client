@@ -18,6 +18,7 @@ const ChildCard = ({ child, newLikes, newDislikes }) => {
 
   const isHomepage = location.pathname === '/childs';
   const isSingleChildPage = location.pathname === `/childs/${childId}`;
+ 
 
 
 
@@ -107,8 +108,11 @@ const ChildCard = ({ child, newLikes, newDislikes }) => {
           </Link>
       </div>
     )}
-  
-    {isHomepage && (
+
+
+
+
+ 
       <div className="box">
         <div className="details">
           <h2>{child.name}</h2>
@@ -121,13 +125,13 @@ const ChildCard = ({ child, newLikes, newDislikes }) => {
         </div>
         <p>extra</p>
       </div>
-    )}
-  
+ 
+{/*   
     {isHomepage && (
       <Link to={`/childs/${child.id}`}>
         <div className="look"></div>
       </Link>
-    )}
+    )} */}
 
   </>
 

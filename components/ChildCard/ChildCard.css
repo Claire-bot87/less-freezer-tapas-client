@@ -178,30 +178,7 @@
     object-fit: cover;
   }
   
-  @media (max-width:480px) {
-    .card img {
-      width:100%;
-      height:100%;
-      border-radius: 10%;
-      margin-right: .5rem;
-    }
-    
-    .card {
-      flex: 0 0 40%; 
-    }
-    
-    .box{
-      /* background-color:#ffffff; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-items: center;
-      transition: transform 0.3s ease;
-      height:15vh;
-      width:100%;
-    }
-  }
-  
+
   
   .image-box{
     height:70%;
@@ -230,12 +207,7 @@ overflow: hidden;
   }
 
 
-  /* .dislikes ul {
-  display:flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  align-items:flex-start;
-  } */
+
 
   .dislikes li {
     /* background-color: red; */

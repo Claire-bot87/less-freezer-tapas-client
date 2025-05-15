@@ -51,7 +51,8 @@ export const signup = async (formData) => {
 
 export const userShow = async (userId) => {
   try{
-      const res = await axios.get(BASE_URL + `/${userId}`)
+    console.log(`USER ID IN USER SERVICE = ${userId}`)
+      const res = await axios.get(BASE_URL + `/users/${userId}`)
       console.log(`child ID = ${userId}`)
       console.log('Response from userShow:', res.data) 
       return res.data

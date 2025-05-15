@@ -21,17 +21,20 @@ export default function Signin(){
   
   
       const navigate = useNavigate();
+
+      const { user } = useContext(UserContext)
   
     // Events
     const handleSubmit = async (e) => {
       e.preventDefault()
       try {
         const data = await signin(formData)
+        console.log(`DATA${data._id}`)
         setToken(data.token)
     
         setUser(getUserFromToken())
-        
-      navigate('/')
+        console.log(`🌸 USER${user._id}`)
+      navigate(`/users/${user._id}`)
       } catch (error) {
       //   setErrors(error.response.data.errors)
         setErrors(error.message)

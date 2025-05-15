@@ -43,6 +43,7 @@ export const signup = async (formData) => {
   export const signin = async (formData) => {
     try {
         const res = await axios.post(BASE_URL + '/signin/', formData)
+        console.log(`💕RES.DATA ${JSON.stringify(res.data)}`)
         return res.data
     } catch (error) {
         throw new error

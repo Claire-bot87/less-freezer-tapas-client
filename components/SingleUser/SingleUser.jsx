@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router'
 import { userShow } from '../../services/userService'
 import AllChildsSideBar from '../../components/AllChildsSideBar/AllChildsSideBar.jsx'
+import ChildCard from '../../components/ChildCard/ChildCard.jsx'
 import './SingleUser.css'
 
 export default function SingleUser() {
@@ -59,6 +60,8 @@ console.log(` THIS IS THE USER ID ${data._id}`)
     {/* <button className="button" id="test" onClick={() => { handleTest(user) }}></button> */}
 
 <AllChildsSideBar />
+
+
 
 </div>
 

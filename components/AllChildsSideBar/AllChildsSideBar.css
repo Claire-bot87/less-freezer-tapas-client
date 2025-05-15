@@ -34,3 +34,21 @@
     border: 2px solid green; /* Optional for debug */
 
 }
+
+.filter-container{
+    display: flex;
+    flex-direction: column;
+    background: #dddddd;
+    gap:5rem;
+    color:red;
+}
+
+/* .sidebar{
+    display:flex;
+    flex-direction:column;
+} */
+
+.filter-container h1{
+    display:block;
+    color:red;
+}

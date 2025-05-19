@@ -5,17 +5,25 @@
 
 .shared-likes{
     color: rgb(241, 203, 9);
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    height:60vh;
+
 }
 
+.shared-likes h1{
+    margin:2rem;
+}
 
 .goto-div{
     display:flex;
     flex-direction:column;
-    justify-content: center!important;
-    align-items: center!important;
-    align-content: center!important;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
     height:80vh;
-    width:100vw;
+    width:80vw;
     font-family: "Bebas Neue", sans-serif;
   /* margin:10rem 10rem 10rem 10rem; */
 
@@ -28,6 +36,7 @@ font-family:'Outfit';
 color:white;
 font-weight: 150;
 margin:4rem;
+
 }
 
 
@@ -38,11 +47,12 @@ margin:4rem;
     justify-content:center;
     align-items:center;
     align-content:center;
-    width: 80vw;
+    width: 80%;
+    margin: 3rem;
 }
 
 .image-div{
-    width:30vw;
+    width:50%;
     height:30vh;
     background-image: url('/assets/shopping-basket.png');
     background-size: contain; 
@@ -55,4 +65,8 @@ margin:4rem;
 .goto-container{
     height:100vh;
     width:100vw;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
 }

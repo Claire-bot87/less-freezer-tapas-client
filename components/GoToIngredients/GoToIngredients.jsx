@@ -72,11 +72,12 @@ const GoToIngredients = () => {
 
     return (
 
-
+<div className='goto-container'>
         <div className='goto-div'>
-                 
-
-
+                 <div className='message-div'>
+<h1>These are your go-to ingredients to buy. The crowd-pleasers that the whole family will enjoy....</h1>
+</div>
+<div className='image-and-list-div'>
 
       <div className='shared-likes'>
       {sharedLikes.map(like => (
@@ -84,8 +85,12 @@ const GoToIngredients = () => {
       ))}
 
 </div>
-</div>
+<div className='image-div'>
 
+</div>
+</div>
+</div>
+</div>
 
     )
 }

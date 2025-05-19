@@ -1,3 +1,9 @@
+.all-childs-div{
+display:flex;
+flex-direction:column;
+
+}
+
 .new-child {
    
     background-image: url(./plus.png);
@@ -31,33 +37,33 @@
     background: #ddd;
     padding: 1rem;
     min-width: 250px;
-    border: 2px solid green; /* Optional for debug */
+     /* Optional for debug */
 
 }
 
 .filter-container{
     display: flex;
     flex-direction: column;
-    background: #dddddd;
+  
     gap:5rem;
-    color:red;
+    color:white;
 }
 
-/* .sidebar{
-    display:flex;
-    flex-direction:column;
-} */
+
 
 .filter-container h1{
     display:block;
-    color:red;
+    color:white;
 }
 
 .no-childs-div{
     font-size: large;
-    color:red;
-    width:200px;
-    height:200px;
-    background-color:blue;
+    width:80vw;
+    height:40vh;
 
+
+}
+
+.no-childs-div p{
+font-size:32px;
 }

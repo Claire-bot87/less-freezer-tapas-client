@@ -1,33 +1,3 @@
-.post {
-    font-size: 1.05rem;
-  }
-  
-  .back {
-    display: flex;
-    align-items: center;
-    padding: .6rem 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .back button {
-    background-color: transparent;
-    border: none;
-    border-radius: 8px;
-    padding: 0.3rem 0.3rem 0.3rem;
-    margin-right: .7rem;
-  }
-  
-  .back button:hover {
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  .back span {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: black;
-  }
 
   
   .space {
@@ -36,10 +6,5 @@
     font-style: italic;
   }
 
-  .background {
-    background-color: white!important;
-    height:100%;
-    width:100%;
-  }
 
  

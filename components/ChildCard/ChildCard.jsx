@@ -113,7 +113,7 @@ const ChildCard = ({ child, newLikes, newDislikes }) => {
 
 
  
-      <div className="box">
+      {/* <div className="box">
         <div className="details">
           <h2>{child.name}</h2>
           <h2>Likes:</h2>
@@ -124,7 +124,7 @@ const ChildCard = ({ child, newLikes, newDislikes }) => {
           </ul>
         </div>
         <p>extra</p>
-      </div>
+      </div> */}
  
 {/*   
     {isHomepage && (

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
 .new-foodItem {
    
     background-image: url(./plus.png);
@@ -35,11 +39,6 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-  
-    /* display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr; */
-
 
 }
 

@@ -46,43 +46,32 @@ export default function AllChildsSideBar(){
 
     return (
     <>
-    <div className="sidebar">
+    <div className="all-childs-div">
     <div className = 'topdiv' ></div>
 
-{ isChildsPage && 
-<div className = 'childContainer'style={{ border: '2px solid green' }}>
 
-
-{childs.length > 0 
-? childs.map(child => <ChildCard key={child._id} child={child} />)
-: <p>There are no childs yet</p>
-}
-
-</div> 
-
-}
 
 {/* {isSingleUserPage && ( */}
       <>
-        <h1>FILTER</h1>
-        <div className='filter-container' style={{ border: '2px solid green' }}>
+   
+        <div className='filter-container' >
           {userChildren.length > 0 ? (
 
             userChildren.map(child => (
-                // <Link to='/childs/`${child._id}`'>
+                
                 <Link to={`/childs/${child._id}`}>
               <h1 key={child._id}>{child.name}</h1>
               </Link>
             ))
-            // <h1>hey!</h1>
+        
           ) : (
             <div className='no-childs-div'>
-              <p>There are no children yet</p>
+              <p>Get started by telling us about your child</p>
               <button onClick={() => navigate('/childs/add')} className='add-child-button'>
                 Add Child
               </button>
             </div>
-            // <h1>Howdy!</h1>
+          
           )}
         </div>
       </>

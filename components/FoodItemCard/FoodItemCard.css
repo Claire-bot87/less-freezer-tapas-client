@@ -1,9 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
 .food-card {
     padding: 1rem;
     background-color:blue;
     border-width: 2px !important;
     border-style: solid !important;
-    border-color: var(--background-secondary) !important;
+    border-color: white;;
     border-image: initial !important;
     border-radius: 8px !important;
     display:flex;
@@ -11,7 +15,9 @@
     justify-content: center !important;
     align-items: center;
     width: 25vw;
-    height: 12vh;
+    height: 13vh;
+    font-family:'Outfit';
+    margin:1rem;
     /* min-width: 300px; */
   }
   
@@ -69,7 +75,7 @@
   
   .food-details{
     /* background-color: #ffffff; */
-    height:30%;
+    height:25%;
   }
   
 
@@ -165,9 +171,8 @@
 .button {
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
-  color: var(--text-primary);
-  background-color: var(--brand);
-  border: none;
+  background-color: aquamarine;
+  border:#b71782;
   margin: 0.4rem;
   padding: 0.3rem 1rem;
   cursor: pointer;
@@ -178,7 +183,7 @@
   text-align: center;
   height: 2rem;
   width: 2rem;
-  background-image: url(./heart.png);
+  background-image: url('/assets/heart.png');
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
@@ -198,3 +203,13 @@
   width: 80%;
 }
 
+#add-like{
+  background-color: blue;
+  font-size: 32px;;
+  cursor: pointer;
+  border:red;
+  background-image: url('/assets/heart.png');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+}

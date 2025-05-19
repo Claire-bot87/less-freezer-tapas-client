@@ -5,6 +5,7 @@ import { setToken } from '../../utils/auth'
 import { getUserFromToken } from '../../utils/auth'
 import { UserContext } from '../../contexts/UserContext'
 import './Signin.css';
+import { Button } from 'react-bootstrap'
 
 
 export default function Signin(){
@@ -111,7 +112,7 @@ export default function Signin(){
         </form>
   
   
-        <button onClick={() => navigate('/signup')} className='no-account-button'>Don't have an account yet? Sign up here!</button>
+        <Button onClick={() => navigate('/signup')} variant='warning'>Don't have an account yet? Sign up here!</Button>
         </div>
       </section>
     )

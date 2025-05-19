@@ -46,7 +46,7 @@ export default function AddChild() {
 
     return (
         <section className='add-child-container'>
-            <h1>AddChild</h1>
+            <h1>Add Child</h1>
             <form onSubmit={handleSubmit}>
                 {/*name*/}
                 <div className='form-field'>
@@ -77,7 +77,7 @@ export default function AddChild() {
                 </div>
 
                 <div className='button-group'>
-          <Link to='/'>Cancel</Link>
+          {/* <Link to='/'>Cancel</Link> */}
           <button type='submit' disabled={formData.name === '' || isUploading}>Create</button>
         </div>
 

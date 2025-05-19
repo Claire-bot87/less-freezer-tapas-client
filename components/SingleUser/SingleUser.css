@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 .single-user-div {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;;
+        align-content:flex-start;
         padding: 2rem;
         gap: 2rem;
+        height: 80vh;
+        width:100vw;
+        align-content: center;
+        font-family: 'Outfit';
+        font-optical-sizing: auto !important;
+        font-weight: 100 !important;
+        font-style: normal !important;
+        color:white !important;
+        margin:5rem;
+        
       }
 
 
@@ -49,4 +63,32 @@
 
   .sidebar {
     flex: 0 0 300px;
+  }
+
+  .username-div h1{
+    color: rgb(241, 203, 9);
+    font-size: 60px;
+  }
+
+  .username-div{
+    width: 20vw;
+  }
+
+  .background{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:space-between;
+    align-content:space-between;
+    width: 100vw;
+  }
+
+  .childcard-div{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    align-content:space-between;
+    width: 100vw;
+
   }

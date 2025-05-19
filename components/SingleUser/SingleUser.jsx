@@ -54,10 +54,12 @@ console.log(` THIS IS THE USER ID ${data._id}`)
 
     return (
 <div className='single-user-div'>
-<h1>User show page</h1>
+<div className='username-div'>
 {user ? <h1>{user.username}</h1> : <h1>Loading user</h1>}
+</div>
+<h1>Find healthy recipe ideas for your children</h1>
 
-    {/* <button className="button" id="test" onClick={() => { handleTest(user) }}></button> */}
+
 
 <AllChildsSideBar />
 

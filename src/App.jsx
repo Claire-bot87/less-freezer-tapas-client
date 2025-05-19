@@ -15,6 +15,7 @@ import SingleUser from '../components/SingleUser/SingleUser.jsx'
 import GoToIngredients from '../components/GoToIngredients/GoToIngredients.jsx'
 import './App.css';
 
+
 function App() {
   const location = useLocation();
   const isHome = location.pathname === '/';

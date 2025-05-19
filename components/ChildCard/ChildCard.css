@@ -1,20 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-  
-  
-  .card:hover {
-    border-color:  #b71782 !important;
-    transition: border-color 0.3s ease;
-  }
-  
-  .card img {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 10%;
-    margin-right: .5rem;
-  }
-  
-  
-  .card h2 {
+
+
+.card h2 {
     font-size: 1em;
     margin-bottom: .5rem;
     letter-spacing: 0.2px;
@@ -51,7 +39,10 @@
     flex-direction: row;
     align-items: center;
     justify-items: space-around;
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: 'Outfit';
   }
   
   .details{
@@ -62,18 +53,6 @@
     justify-content: space-between;
     align-content: space-around;
     width:100%;
-  }
-  
-  .look {
-    background-color: #ffffff;
-    background-image: url(./eye.png);
-    width: 40px;
-    height: 40px;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:auto;
   }
   
   
@@ -91,54 +70,6 @@
     border-width: 0px !important;
     margin-top: 50%;
   
-  }
-  
-  
-  .pencil {
-  
-    background-image: url(./pencil.png);
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .rating {
-  
-    background-image: url(./rating.png);
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .garbage {
-  
-    background-image: url(./garbage.png);
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 40px 0px 40px;
-    background-color: #ffffff;
-  }
-  
-  .pencil-garbage-wrapper
-  {
-    display:flex;
-    justify-content: center;
-    align-content:space-between;
-    background-color: #ffffff;
   }
   
   .box{
@@ -229,7 +160,7 @@ background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
 justify-content: center;
-background-color: red;
+/* background-color: red; */
   }
 
   .image-div-boy{
@@ -240,11 +171,12 @@ background-color: red;
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
-    background-color: red;
+    /* background-color: red; */
       }
 
 
 .for-name-and-image{
         display: flex;
         flex-direction: column;
+    
       }

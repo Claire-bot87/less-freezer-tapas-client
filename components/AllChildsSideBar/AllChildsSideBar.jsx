@@ -70,7 +70,7 @@ export default function AllChildsSideBar(){
 
             userChildren.map(child => (
                 // <Link to='/childs/`${child._id}`'>
-                <Link to='/childs/{child._id}'>
+                <Link to={`/childs/${child._id}`}>
               <h1 key={child._id}>{child.name}</h1>
               </Link>
             ))

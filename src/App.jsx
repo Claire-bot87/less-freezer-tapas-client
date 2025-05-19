@@ -12,6 +12,7 @@ import Home from '../components/Home/Home.jsx'
 import Nav from '../components/Nav/Nav.jsx'
 import AllChildsSideBar from '../components/AllChildsSideBar/AllChildsSideBar.jsx'
 import SingleUser from '../components/SingleUser/SingleUser.jsx'
+import GoToIngredients from '../components/GoToIngredients/GoToIngredients.jsx'
 import './App.css';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     <div className={isHome ? 'hero-background' : 'all-pages-background'}>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        
         <Route path="/childs" element={<AllChildsSideBar />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
@@ -32,7 +33,9 @@ function App() {
         <Route path="/foodItems/:foodItemId" element={<UpdateFoodItem />} />
         <Route path="/childs/add" element={<AddChild />} />
         <Route path="/childs/:childId/edit" element={<UpdateChild />} />
+        <Route path="/users/:userId/gotos" element={<GoToIngredients />} />
         <Route path="/users/:userId" element={<SingleUser />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </div>
   );
